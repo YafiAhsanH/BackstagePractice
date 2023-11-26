@@ -18,7 +18,6 @@ export default function Home() {
     const { scrollTop, clientHeight } = event.target;
     const newScroll = Math.floor(scrollTop / clientHeight);
     setIssueScroll(newScroll);
-    console.log(window.innerWidth);
   };
 
   return (
@@ -42,7 +41,7 @@ export default function Home() {
             />
           ))}
         </div>
-        
+
         {/* Desktop Layout */}
         <div className="hidden desktop:block">
           <div className="flex-col flex text-black fixed left-0 bottom-0 max-w-[25%] p-5">
