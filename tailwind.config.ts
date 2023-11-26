@@ -6,6 +6,11 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    {
+      pattern: /bg-my-+/,
+    },
+  ],
   theme: {
     extend: {
       backgroundImage: {
@@ -13,6 +18,17 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'my-green': '#00c1b5',
+        'my-orange': '#ff651a',
+        'my-yellow': '#ffbe00',
+        'my-blue': '#1d3fbb',
+        'my-red': '#e30512',
+        'my-white': '#ffffff'
+      },
+      fontFamily: {
+        'roboto': ['Roboto']
+      }
     },
   },
   plugins: [],
