@@ -28,6 +28,9 @@ const config: Config = {
       },
       fontFamily: {
         'roboto': ['Roboto']
+      },
+      screens: {
+        'desktop': '920px',
       }
     },
   },

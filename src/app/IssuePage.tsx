@@ -13,7 +13,7 @@ const IssuePage = ({img, id, bg}: {img: string, id: number, bg: string}) => {
         width={400}
         height={600}
         alt={`Issue #${id}`}
-        className="max-h-[32rem] max-w-[22rem] shadow-[-15px_15px_15px_-4px_rgba(0,0,0,0.5)]"
+        className="max-h-[30rem] max-w-[22rem] shadow-[-15px_15px_15px_-4px_rgba(0,0,0,0.5)]"
       />
       <p className="py-4 ">Issue #{id}</p>
       <p>
