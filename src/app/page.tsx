@@ -1,21 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, UIEvent } from "react";
 import IssuePage from "./IssuePage";
 
-export default function Home() {
-  const issues = [
-    { id: 1, bg: "my-green", img: "/green.jpg" },
-    { id: 2, bg: "my-orange", img: "/orange.jpg" },
-    { id: 3, bg: "my-yellow", img: "/yellow.jpg" },
-    { id: 4, bg: "my-blue", img: "/blue.jpg" },
-    { id: 5, bg: "my-red", img: "/red.jpg" },
-    { id: 6, bg: "my-white", img: "/white.jpg" },
-  ];
+const ISSUES = [
+  { id: 1, bg: "my-green", img: "/green.jpg" },
+  { id: 2, bg: "my-orange", img: "/orange.jpg" },
+  { id: 3, bg: "my-yellow", img: "/yellow.jpg" },
+  { id: 4, bg: "my-blue", img: "/blue.jpg" },
+  { id: 5, bg: "my-red", img: "/red.jpg" },
+  { id: 6, bg: "my-white", img: "/white.jpg" },
+];
 
+export default function Home() {
   const [issueScroll, setIssueScroll] = useState(0);
 
-  const handleScroll = (event: any) => {
-    const { scrollTop, clientHeight } = event.target;
+  const handleScroll = (event: UIEvent<HTMLElement>) => {
+    const { scrollTop, clientHeight } = event.currentTarget;
     const newScroll = Math.floor(scrollTop / clientHeight);
     setIssueScroll(newScroll);
   };
@@ -30,9 +30,9 @@ export default function Home() {
           BACKSTAGE TALKS
         </p>
         <div
-          className={`flex flex-col mx-auto left-0 right-0 -z-50 desktop:absolute text-black items-center justify-center transition duration-400 ease-in-out bg-${issues[issueScroll].bg}`}
+          className={`flex flex-col mx-auto left-0 right-0 -z-50 desktop:absolute text-black items-center justify-center transition duration-400 ease-in-out bg-${ISSUES[issueScroll].bg}`}
         >
-          {issues.map((issue) => (
+          {ISSUES.map((issue) => (
             <IssuePage
               key={issue.id}
               img={issue.img}
@@ -65,7 +65,7 @@ export default function Home() {
             info@backstagetalks.com
           </p>
           <div className="text-black fixed bottom-0 right-0 p-5">
-            {issues.map((issue) => (
+            {ISSUES.map((issue) => (
               <div
                 key={issue.id}
                 className={`hover:cursor-pointer hover:underline underline-offset-2 py-1 text-lg ${
